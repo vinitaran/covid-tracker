@@ -6,5 +6,53 @@
 }
 
 .header__dropdown{
-
+  width: 140px;
 }
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: #f5f6fa;
+  }
+  
+  .app{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+  
+  .app__stats{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .app__left{
+    flex: 0.85;
+  }
+  
+  .app__right{
+    width: 392px;
+  }
+
+  .header > h1 {
+    color: #fc3c3c;
+    font-size: 2rem;
+  }
+
+  .linegraph__title{
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  @media(max-width: 990px){
+    .app{
+      flex-direction: column;
+    }
+    .app__right{
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
