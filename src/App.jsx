@@ -20,6 +20,7 @@ const App = () => {
     const [mapCountries, setMapCountries] = useState([]);
     const [casesType, setCasesType] = useState("cases");
 
+    /**Initial loading - to get update of corona virus all over the world */
     useEffect(() => {
         fetch("https://disease.sh/v3/covid-19/all").then((response) => {
             return response.json();
@@ -28,6 +29,7 @@ const App = () => {
         })
     }, [])
 
+    /**Load corona virus cases of all countires and arrange them in descending order */
     useEffect(() => {
         const getCountriesData = async () => {
             await fetch("https://disease.sh/v3/covid-19/countries").then((response) => {
@@ -56,6 +58,7 @@ const App = () => {
         await fetch(url)
           .then((response) => response.json())
           .then((data) => {
+            console.log(data)
             setCountryInfo(data);
             if(countryCode!=='worldwide'){
                 setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
